@@ -2,9 +2,9 @@ require 'formula'
 
 class Postgresql < Formula
   homepage 'http://www.postgresql.org/'
-  url 'http://ftp.postgresql.org/pub/source/v9.2.4/postgresql-9.2.4.tar.bz2'
-  sha1 '75b53c884cb10ed9404747b51677358f12082152'
-  version '9.2.4-boxen3'
+  url 'http://ftp.postgresql.org/pub/source/v9.3beta2/postgresql-9.3beta2.tar.bz2'
+  sha256 '67b4f1e8be622ab2f32b2a7823b3185052c93eae11c961214d87be76978f35ae'
+  version '9.3beta2-boxen1'
 
   depends_on 'readline'
   depends_on 'libxml2' if MacOS.version == :leopard # Leopard libxml is too old
@@ -196,7 +196,7 @@ __END__
 -override python_libspec = -framework Python
 -override python_additional_libs =
  endif
- 
+
  # If we don't have a shared library and the platform doesn't allow it
 --- a/contrib/uuid-ossp/uuid-ossp.c	2012-07-30 18:34:53.000000000 -0700
 +++ b/contrib/uuid-ossp/uuid-ossp.c	2012-07-30 18:35:03.000000000 -0700
