@@ -14,6 +14,12 @@ class Postgresql < Formula
   depends_on 'ossp-uuid'
   depends_on 'readline'
 
+  def options
+    [
+      ['--with-tcl', 'Build with tcl support.'],
+    ]
+  end
+
   # Fix uuid-ossp build issues: http://archives.postgresql.org/pgsql-general/2012-07/msg00654.php
   def patches
     DATA
@@ -33,8 +39,9 @@ class Postgresql < Formula
             "--with-ossp-uuid",
             "--with-pam",
             "--with-perl",
-            "--with-python",
-            "--with-tcl"]
+            "--with-python"]
+
+    args << "--with-tcl" if ARGV.include? '--with-tcl'
 
     system "./configure", *args
     if build.head?
